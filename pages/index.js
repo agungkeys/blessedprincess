@@ -139,7 +139,7 @@ export default function Home() {
               </div>
               <div className="max-w-xl mb-6">
                 <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
-                  Let's introduce my self
+                  Let`s introduce my self
                   <br className="hidden md:block" />
                   <span className="inline-block text-pink-700">
                     Hallo...
@@ -154,7 +154,6 @@ export default function Home() {
               </div>
               <div>
                 <a
-                  href="/"
                   aria-label=""
                   className="inline-flex items-center font-semibold transition-colors duration-200 text-pink-700 hover:text-pink-800"
                 >
@@ -195,15 +194,7 @@ export default function Home() {
 
       </main>
 
-      {/* <footer className={styles.footer}>
-        <a
-          href="https://www.instagram.com/agungkeys"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by akwebsite
-        </a>
-      </footer> */}
+    
     </div>
   )
 }
