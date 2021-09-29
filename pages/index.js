@@ -127,7 +127,7 @@ export default function Home() {
           <div className="grid gap-10 lg:grid-cols-2">
             <div className="flex flex-col justify-center md:pr-8 xl:pr-0 lg:max-w-lg">
               <div className="flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-pink-100 p-1">
-                <svg id="Capa_1" enable-background="new 0 0 512 512" height="512" viewBox="0 0 512 512" width="512" xmlns="http://www.w3.org/2000/svg">
+                <svg enableBackground="new 0 0 512 512" height="512" viewBox="0 0 512 512" width="512" xmlns="http://www.w3.org/2000/svg">
                   <g>
                     <path d="m286 151c-8.284 0-15 6.716-15 15v120c0 8.284 6.716 15 15 15s15-6.716 15-15v-120c0-8.284-6.716-15-15-15z"/>
                     <path d="m346 151c-8.284 0-15 6.716-15 15v60c0 8.284 6.716 15 15 15s15-6.716 15-15v-60c0-8.284-6.716-15-15-15z"/>
@@ -139,7 +139,7 @@ export default function Home() {
               </div>
               <div className="max-w-xl mb-6">
                 <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
-                  Let`s introduce my self
+                  Let's introduce my self
                   <br className="hidden md:block" />
                   <span className="inline-block text-pink-700">
                     Hallo...
