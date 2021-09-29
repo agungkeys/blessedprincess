@@ -32,7 +32,7 @@ export default function Home() {
                 <a href="#">
                   <span className="sr-only">Workflow</span>
                   <img
-                    className="absolute top-2 w-auto h-16 md:h-16 lg:h-16"
+                    className="absolute top-2 w-auto h-14 md:h-14 lg:h-14"
                     src="/logo.svg"
                     alt=""
                   />
