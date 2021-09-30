@@ -67,7 +67,7 @@ export default function Home() {
                     alt=""
                     width={222}
                     height={224}
-                    objectFit='cover'
+                    objectFit="cover"
                     layout="responsive"
                     quality={100}
                   />
@@ -79,7 +79,8 @@ export default function Home() {
                     alt=""
                     width={128}
                     height={128}
-                    objectFit='cover'
+                    objectFit="cover"
+                    layout="responsive"
                     quality={100}
                   />
                 </div>
@@ -92,7 +93,8 @@ export default function Home() {
                     alt=""
                     width={256}
                     height={256}
-                    objectFit='cover'
+                    objectFit="cover"
+                    layout="responsive"
                     quality={100}
                   />
                 </div>
