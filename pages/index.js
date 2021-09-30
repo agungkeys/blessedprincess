@@ -78,7 +78,7 @@ function Home({ props }) {
                 </NextLink>
               </div>
               <div className="block pt-3 w-full mx-auto max-w-screen-lg">
-                <div className="font-serif" dangerouslySetInnerHTML={{ __html: statePosts && statePosts[0].description.html }} />
+                {/* <div className="font-serif" dangerouslySetInnerHTML={{ __html: statePosts && statePosts[0].description.html }} /> */}
               </div>
             </div>
           || null
