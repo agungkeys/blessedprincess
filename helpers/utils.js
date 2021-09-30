@@ -21,3 +21,11 @@ export function formatDate(date) {
 
   return [day, month, year].join(' ');
 }
+
+export function isObjectEmpty(obj) {
+  for (const prop in obj) {
+    // eslint-disable-next-line no-prototype-builtins
+    if (obj.hasOwnProperty(prop)) return false;
+  }
+  return true;
+}

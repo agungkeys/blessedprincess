@@ -1,24 +1,27 @@
 import env from './env';
 
 async function fetchAPI(query, { variables } = {}) {
-  const res = await fetch(`${env.CURRENT_API}`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      query,
-      variables,
-    }),
-  })
+  try{
+    const res = await fetch(`${env.CURRENT_API}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        query,
+        variables,
+      }),
+    })
+    const json = await res.json();
+    
+    return json.data;
 
-  const json = await res.json()
-  if (json.errors) {
-    console.error(json.errors)
-    throw new Error('Failed to fetch API')
+  }catch(err){
+    if (err) {
+      console.error(err)
+      throw new Error('Failed to fetch API')
+    }
   }
-
-  return json.data
 }
 
 export async function getPosts() {

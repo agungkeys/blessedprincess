@@ -1,19 +1,27 @@
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
-import { MainLayout, CardBlog, NextLink } from '../ui';
-import Image from 'next/image';
+import { MainLayout, CardBlog, CardSingleBlogLanding } from '../ui';
 import { getPosts } from '../helpers/api';
 import env from '../helpers/env';
-import { formatDate } from '../helpers/utils';
+import { isObjectEmpty } from '../helpers/utils';
+
 
 function Home({ props }) {
   const { storePosts } = props;
   const [statePosts, setStatePosts] = useState([]);
+  const [statePostOne, setStatePostOne] = useState({});
+
   useEffect(() => {
     if(storePosts){
-      setStatePosts(storePosts)
+      setStatePosts(storePosts);
     }
   },[storePosts])
+
+  useEffect(() => {
+    if(statePosts.length > 1){
+      setStatePostOne(statePosts[0]);
+    }
+  }, [statePosts])
   return (
     <MainLayout>
       <Head>
@@ -22,6 +30,7 @@ function Home({ props }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      {console.log("🚀 ~ file: index.js ~ line 12 ~ Home ~ statePosts", statePostOne)}
       <main className="w-full">
 
         {/* section list blog */}
@@ -49,43 +58,17 @@ function Home({ props }) {
         <div className="px-4 py-2 mx-auto max-w-screen-lg">
           <hr className="border border-pink-800" />
         </div>
-
-        <div className="px-4 py-10 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
-          {statePosts && statePosts.length > 0 && 
-            <div className="inline-block py-4 w-full text-center">
-              <p className="mb-1 text-xs font-semibold text-gray-600 font-serif">
-                {formatDate(statePosts && statePosts[0].updatedAt)}
-              </p>
-              <NextLink href={statePosts && statePosts[0].slug ? `/blog/${statePosts[0].slug}` : `#`}>
-                <div className="inline-block mb-3 text-black transition-colors duration-200 hover:text-deep-pink-800">
-                  <span className="text-xl font-bold font-serif leading-4">{statePosts[0].title}</span>
-                </div>
-              </NextLink>
-              <div className="block">
-                <NextLink href={statePosts && statePosts[0].slug ? `/blog/${statePosts[0].slug}` : `#`}>
-                  <div className="inline-grid w-full max-w-screen-sm">
-                    <Image
-                      className="rounded"
-                      src={statePosts && statePosts[0].poster ? statePosts[0].poster.url : env.NO_IMAGE}
-                      alt=""
-                      width={statePosts && statePosts[0].poster ? statePosts[0].poster.width : env.NO_IMAGE_SIZE}
-                      height={statePosts && statePosts[0].poster ? statePosts[0].poster.height : env.NO_IMAGE_SIZE}
-                      objectFit="cover"
-                      layout="responsive"
-                      quality={100}
-                    />
-                  </div>
-                </NextLink>
-              </div>
-              <div className="block pt-3 w-full mx-auto max-w-screen-lg">
-                {/* <div className="font-serif" dangerouslySetInnerHTML={{ __html: statePosts && statePosts[0].description.html }} /> */}
-              </div>
-            </div>
-          || null
-          }
-        </div>
-
-
+        {!isObjectEmpty(statePostOne) && 
+          <div className="px-4 py-10 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
+            <CardSingleBlogLanding 
+              title={statePostOne.title}
+              description={statePostOne.description}
+              date={statePostOne.updatedAt}
+              poster={statePostOne.poster}
+              link={statePostOne.slug}
+            />
+          </div>
+        || null}
       </main>
     </MainLayout>
   )
