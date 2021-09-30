@@ -1,9 +1,9 @@
 import Head from 'next/head';
 import { MainLayout, CardBlog, NextLink } from '../ui';
 import Image from 'next/image';
-import { getPosts } from './helpers/api';
-import env from './helpers/env';
-import { formatDate } from './helpers/utils';
+import { getPosts } from '../helpers/api';
+import env from '../helpers/env';
+import { formatDate } from '../helpers/utils';
 
 function Home({ props }) {
   const { storePosts } = props;
