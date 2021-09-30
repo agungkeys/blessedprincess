@@ -13,7 +13,7 @@ function Home({ props }) {
     if(storePosts){
       setStatePosts(storePosts)
     }
-  },[])
+  },[storePosts])
   return (
     <MainLayout>
       <Head>
