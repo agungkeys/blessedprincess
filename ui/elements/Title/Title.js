@@ -4,7 +4,7 @@ function Title(props) {
     <div>
       <div className="flex flex-col px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20 lg:flex-row">
         <div className="mb-5 lg:w-full">
-          <h2 className="relative mb-4 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
+          <h2 className="relative mb-4 font-sans text-3xl font-bold tracking-tight text-pink-700 sm:text-4xl sm:leading-none">
             <span className="relative inline-block">
               <svg
                 viewBox="0 0 52 24"

@@ -7,8 +7,11 @@ import Title from "./elements/Title";
 import MainLayout from "./layout";
 
 /** components */
+import CardBlog from "./components/CardBlog";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
+import SectionLanding from "./components/SectionLanding";
+
 
 export {
   // elements
@@ -20,6 +23,8 @@ export {
   MainLayout,
 
   // components
+  CardBlog,
   Footer,
   Navbar,
+  SectionLanding,
 };
