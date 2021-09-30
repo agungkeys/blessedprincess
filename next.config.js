@@ -1,6 +1,11 @@
 module.exports = {
   reactStrictMode: true,
   images: {
-    domains: ['https://images.pexels.com/', 'images.pexels.com'],
+    domains: ['media.graphcms.com'],
+  },
+  publicRuntimeConfig: {
+    API: process.env.BASE_API,
+    ENV: process.env.BASE_ENV,
+    HOST: process.env.BASE_HOST,
   },
 }

@@ -1,34 +1,42 @@
 import Image from "next/image";
 import NextLink from "../../elements/NextLink";
+import { formatDate } from "../../../pages/helpers/utils";
 
 function CardBlog(props) {
   const { title, description, date, image, imageWidth, imageHeight, link } = props;
   return (
-    <div className="overflow-hidden transition-shadow duration-300 bg-white rounded">
-      <NextLink href={link}>
-        <div className="w-full h-auto">
-          <Image
-            className="rounded"
-            src={image}
-            alt=""
-            width={imageWidth}
-            height={imageHeight}
-            objectFit="cover"
-            layout="responsive"
-            quality={100}
-          />
-        </div>
-      </NextLink>
-      <div className="py-3">
-        <p className="mb-2 text-xs font-semibold text-gray-600 uppercase">
-          {date}
-        </p>
+    <div className="overflow-hidden transition-shadow duration-300 bg-white rounded" style={{backgroundColor: "#f8e9e8"}}>
+      <div className="block">
         <NextLink href={link}>
-          <div className="inline-block mb-3 text-black transition-colors duration-200 hover:text-deep-pink-800">
-            <p className="text-2xl font-bold leading-5">{title}</p>
+          <div className="inline-grid w-full h-56">
+            <Image
+              className="rounded"
+              src={image}
+              alt=""
+              width={imageWidth}
+              height={imageHeight}
+              objectFit="cover"
+              layout="responsive"
+              quality={100}
+            />
           </div>
         </NextLink>
-        <p className="mb-4 text-gray-700">{description}</p>
+      </div>
+      <div className="inline-block py-4">
+        {date && 
+          <p className="mb-1 text-xs font-semibold text-gray-600 font-serif">
+            {formatDate(date)}
+          </p>
+        || null
+        }
+        <NextLink href={link}>
+          <div className="inline-block mb-3 text-black transition-colors duration-200 hover:text-deep-pink-800">
+            <span className="text-xl font-bold font-serif leading-4">{title}</span>
+          </div>
+        </NextLink>
+        {description && 
+          <p className="mb-4 text-gray-700 font-serif">{description}</p>
+        || null}
         {/* <div className="flex space-x-4">
           <a>
             <div className="mr-2">

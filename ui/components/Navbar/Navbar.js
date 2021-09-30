@@ -12,7 +12,8 @@ import NextLink from '../../elements/NextLink';
 const Navbar = () => {
   return (
       <Popover className="relative bg-white w-full">
-        <div className="mx-auto px-2 sm:px-6">
+        <div className="mx-auto px-2 sm:px-6" style={{backgroundColor: "#fff"}} >
+        {/* <div className="mx-auto px-2 sm:px-6" style={{backgroundColor: "#ecdedb"}} > */}
           <div className="flex justify-between items-center border-b-2 border-gray-100 py-4 md:justify-start md:space-x-10">
             <div className="flex justify-start lg:w-0 lg:flex-1">
               <NextLink href="/">

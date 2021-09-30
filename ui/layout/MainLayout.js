@@ -5,7 +5,7 @@ import Footer from '../components/Footer';
 const MainLayout = (props) => {
   const { children } = props;
   return (
-    <div>
+    <div style={{backgroundColor: "#f8e9e8"}}>
       <Navbar />
       {children}
       <Footer />
