@@ -1,6 +1,6 @@
 import Image from "next/image";
 import NextLink from "../../elements/NextLink";
-import { formatDate } from "../../../pages/helpers/utils";
+import { formatDate } from "../../../helpers/utils";
 
 function CardBlog(props) {
   const { title, description, date, image, imageWidth, imageHeight, link } = props;
