@@ -51,25 +51,25 @@ function Home({ props }) {
         </div>
 
         <div className="px-4 py-10 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
-          {statePosts && statePosts.length && 
+          {statePosts && statePosts.length > 0 && 
             <div className="inline-block py-4 w-full text-center">
               <p className="mb-1 text-xs font-semibold text-gray-600 font-serif">
-                {formatDate(statePosts[0].updatedAt)}
+                {formatDate(statePosts && statePosts[0].updatedAt)}
               </p>
-              <NextLink href={statePosts[0].slug ? `/blog/${statePosts[0].slug}` : `#`}>
+              <NextLink href={statePosts && statePosts[0].slug ? `/blog/${statePosts[0].slug}` : `#`}>
                 <div className="inline-block mb-3 text-black transition-colors duration-200 hover:text-deep-pink-800">
                   <span className="text-xl font-bold font-serif leading-4">{statePosts[0].title}</span>
                 </div>
               </NextLink>
               <div className="block">
-                <NextLink href={statePosts[0].slug ? `/blog/${statePosts[0].slug}` : `#`}>
+                <NextLink href={statePosts && statePosts[0].slug ? `/blog/${statePosts[0].slug}` : `#`}>
                   <div className="inline-grid w-full max-w-screen-sm">
                     <Image
                       className="rounded"
-                      src={statePosts[0].poster ? statePosts[0].poster.url : env.NO_IMAGE}
+                      src={statePosts && statePosts[0].poster ? statePosts[0].poster.url : env.NO_IMAGE}
                       alt=""
-                      width={statePosts[0].poster ? statePosts[0].poster.width : env.NO_IMAGE_SIZE}
-                      height={statePosts[0].poster ? statePosts[0].poster.height : env.NO_IMAGE_SIZE}
+                      width={statePosts && statePosts[0].poster ? statePosts[0].poster.width : env.NO_IMAGE_SIZE}
+                      height={statePosts && statePosts[0].poster ? statePosts[0].poster.height : env.NO_IMAGE_SIZE}
                       objectFit="cover"
                       layout="responsive"
                       quality={100}
@@ -78,7 +78,7 @@ function Home({ props }) {
                 </NextLink>
               </div>
               <div className="block pt-3 w-full mx-auto max-w-screen-lg">
-                <div className="font-serif" dangerouslySetInnerHTML={{ __html: statePosts[0].description.html }} />
+                <div className="font-serif" dangerouslySetInnerHTML={{ __html: statePosts && statePosts[0].description.html }} />
               </div>
             </div>
           || null
