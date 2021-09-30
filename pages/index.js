@@ -1,23 +1,10 @@
 import Head from 'next/head';
+import { MainLayout } from '../ui';
 import Image from 'next/image';
-import styles from '../styles/Home.module.css';
-
-import { Fragment } from 'react'
-import { Popover, Transition } from '@headlessui/react'
-import {
-  ChartBarIcon,
-  MenuIcon,
-  XIcon,
-  BookOpenIcon,
-} from '@heroicons/react/outline'
-
-function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
-}
 
 export default function Home() {
   return (
-    <div>
+    <MainLayout>
       <Head>
         <title>Blessed Princess - Official Page by Fatimah</title>
         <meta name="description" content="Blessed Princess - Official Page by Fatimah" />
@@ -25,102 +12,6 @@ export default function Home() {
       </Head>
 
       <main className="w-full">
-        <Popover className="relative bg-white w-full">
-          <div className="mx-auto px-2 sm:px-6">
-            <div className="flex justify-between items-center border-b-2 border-gray-100 py-4 md:justify-start md:space-x-10">
-              <div className="flex justify-start lg:w-0 lg:flex-1">
-                <a href="#">
-                  <span className="sr-only">Workflow</span>
-                  <img
-                    className="absolute top-2 w-auto h-14 md:h-14 lg:h-14"
-                    src="/logo.svg"
-                    alt=""
-                  />
-                </a>
-              </div>
-              <div className="mr-1 my-1 md:hidden">
-                <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-pink-100">
-                  <span className="sr-only">Open menu</span>
-                  <MenuIcon className="h-6 w-6" aria-hidden="true" />
-                </Popover.Button>
-              </div>
-              <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
-                <a href="#" className="text-base font-medium text-gray-500 hover:text-gray-900">
-                  Blog
-                </a>
-                <a href="#" className="ml-8 text-base font-medium text-gray-500 hover:text-gray-900">
-                  About
-                </a>
-                <a
-                  href="#"
-                  className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-pink-700 hover:bg-pink-800"
-                >
-                  Contact
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <Transition
-            as={Fragment}
-            enter="duration-200 ease-out"
-            enterFrom="opacity-0 scale-95"
-            enterTo="opacity-100 scale-100"
-            leave="duration-100 ease-in"
-            leaveFrom="opacity-100 scale-100"
-            leaveTo="opacity-0 scale-95"
-          >
-            <Popover.Panel focus className="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden">
-              <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
-                <div className="pt-5 pb-6 px-5">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <img
-                        className="h-16 w-auto"
-                        src="/logo.svg"
-                        alt="Workflow"
-                      />
-                    </div>
-                    <div className="-mr-2">
-                      <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-pink-100">
-                        <span className="sr-only">Close menu</span>
-                        <XIcon className="h-6 w-6" aria-hidden="true" />
-                      </Popover.Button>
-                    </div>
-                  </div>
-                  <div className="mt-8">
-                    <nav className="grid gap-y-8">
-                        <a
-                          href=""
-                          className="flex items-center rounded-md hover:bg-gray-50"
-                        >
-                          <BookOpenIcon className="flex-shrink-0 h-6 w-6 text-pink-700" aria-hidden="true" />
-                          <span className="ml-3 text-base font-medium text-gray-900">Blog</span>
-                        </a>
-                        <a
-                          href=""
-                          className="flex items-center rounded-md hover:bg-gray-50"
-                        >
-                          <ChartBarIcon className="flex-shrink-0 h-6 w-6 text-pink-700" aria-hidden="true" />
-                          <span className="ml-3 text-base font-medium text-gray-900">About</span>
-                        </a>
-                    </nav>
-                  </div>
-                </div>
-                <div className="py-6 px-5 space-y-6">
-                  <div>
-                    <a
-                      href="#"
-                      className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-pink-700 hover:bg-pink-800"
-                    >
-                      Contact
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </Popover.Panel>
-          </Transition>
-        </Popover>
 
         {/* section heading landing */}
         <div className="px-4 py-10 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
@@ -139,8 +30,7 @@ export default function Home() {
               </div>
               <div className="max-w-xl mb-6">
                 <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
-                  Let&apos;s introduce my self
-                  <br className="hidden md:block" />
+                  Let&apos;s introduce my self<br className="hidden" />
                   <span className="inline-block text-pink-700">
                     Hallo...
                   </span>
@@ -170,31 +60,48 @@ export default function Home() {
             </div>
             <div className="flex items-center justify-center -mx-4 lg:pl-8">
               <div className="flex flex-col items-end px-3">
-                <img
-                  className="object-cover mb-6 rounded shadow-lg h-28 sm:h-48 xl:h-56 w-28 sm:w-48 xl:w-56"
-                  src="https://images.pexels.com/photos/3184287/pexels-photo-3184287.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
-                  alt=""
-                />
-                <img
-                  className="object-cover w-20 h-20 rounded shadow-lg sm:h-32 xl:h-40 sm:w-32 xl:w-40"
-                  src="https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
-                  alt=""
-                />
+                <div className="mb-6 shadow-lg h-28 sm:h-48 xl:h-56 w-28 sm:w-48 xl:w-56">
+                  <Image
+                    className="rounded"
+                    src="https://images.pexels.com/photos/3184287/pexels-photo-3184287.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
+                    alt=""
+                    width={222}
+                    height={224}
+                    objectFit='cover'
+                    layout="responsive"
+                    quality={100}
+                  />
+                </div>
+                <div className="w-20 h-20 shadow-lg sm:h-32 xl:h-40 sm:w-32 xl:w-40">
+                  <Image
+                    className="rounded"
+                    src="https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
+                    alt=""
+                    width={128}
+                    height={128}
+                    objectFit='cover'
+                    quality={100}
+                  />
+                </div>
               </div>
               <div className="px-3">
-                <img
-                  className="object-cover w-40 h-40 rounded shadow-lg sm:h-64 xl:h-80 sm:w-64 xl:w-80"
-                  src="https://images.pexels.com/photos/3182739/pexels-photo-3182739.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;w=500"
-                  alt=""
-                />
+                <div className="w-40 h-40 shadow-lg sm:h-64 xl:h-80 sm:w-64 xl:w-80">
+                  <Image
+                    className="rounded"
+                    src="https://images.pexels.com/photos/3182739/pexels-photo-3182739.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;w=500"
+                    alt=""
+                    width={256}
+                    height={256}
+                    objectFit='cover'
+                    quality={100}
+                  />
+                </div>
               </div>
             </div>
           </div>
         </div>
 
       </main>
-
-    
-    </div>
+    </MainLayout>
   )
 }
