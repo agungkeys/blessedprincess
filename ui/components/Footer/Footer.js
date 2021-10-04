@@ -3,7 +3,7 @@ import NextLink from "../../elements/NextLink";
 function Footer({ }) {
   let year = new Date().getFullYear();
   return (
-    <div className="bg-gray-900 fixed bottom-0 w-full">
+    <div className="bg-gray-900">
       <div className="px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
         <div className="flex flex-col justify-between pt-5 pb-5 border-t border-gray-800 sm:flex-row">
           <p className="text-sm text-gray-500">

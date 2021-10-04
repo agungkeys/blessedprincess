@@ -76,7 +76,7 @@ function Home({ props }) {
         <meta name="description" content="Blessed Princess - Official Page by Fatimah" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="w-full mb-16">
+      <main className="w-full">
 
         {/* section list blog */}
         
