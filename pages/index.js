@@ -41,7 +41,7 @@ function Home({ props }) {
         }
       },
       {
-        breakpoint: 700,
+        breakpoint: 680,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,

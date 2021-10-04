@@ -8,7 +8,7 @@ function CardBlog(props) {
     <div className="overflow-hidden transition-shadow duration-300 bg-white rounded" style={{backgroundColor: "#f8e9e8"}}>
       <div className="block">
         <NextLink href={link}>
-          <div className="inline-grid w-full h-56">
+          <div className="inline-grid w-full h-40 sm:h-60 md:h-56 lg:h-56">
             <Image
               className="rounded"
               src={image}
