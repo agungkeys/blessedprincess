@@ -31,7 +31,7 @@ function CardBlog(props) {
         }
         <NextLink href={link}>
           <div className="inline-block mb-3 text-black transition-colors duration-200 hover:text-deep-pink-800">
-            <span className="text-xl font-bold font-serif leading-4">{title}</span>
+            <h2 className="text-lg font-bold font-serif leading-4 line-clamp-2">{title}</h2>
           </div>
         </NextLink>
         {description && 

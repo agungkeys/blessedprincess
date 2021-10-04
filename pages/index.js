@@ -4,6 +4,7 @@ import { MainLayout, CardBlog, CardSingleBlogLanding } from '../ui';
 import { getPosts } from '../helpers/api';
 import env from '../helpers/env';
 import { isObjectEmpty } from '../helpers/utils';
+import Slider from "react-slick";
 
 
 function Home({ props }) {
@@ -15,13 +16,48 @@ function Home({ props }) {
     if(storePosts){
       setStatePosts(storePosts);
     }
-  },[storePosts])
+  },[storePosts]);
 
   useEffect(() => {
     if(statePosts.length > 1){
       setStatePostOne(statePosts[0]);
     }
-  }, [statePosts])
+  }, [statePosts]);
+
+  const settings = {
+    arrows: false,
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 4,
+          infinite: true,
+        }
+      },
+      {
+        breakpoint: 700,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          infinite: true,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          infinite: true,
+        }
+      }
+    ],
+  };
   return (
     <MainLayout>
       <Head>
@@ -29,29 +65,33 @@ function Home({ props }) {
         <meta name="description" content="Blessed Princess - Official Page by Fatimah" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      {console.log("🚀 ~ file: index.js ~ line 12 ~ Home ~ statePosts", statePostOne)}
       <main className="w-full">
 
         {/* section list blog */}
         
-        <div className="px-4 py-10 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
-          <div className="pt-4 grid gap-8 lg:grid-cols-4 sm:max-w-sm sm:mx-auto lg:max-w-full">
-            {statePosts && statePosts.length && statePosts.slice(0,4).map((item) => 
-              {
-                return (
-                  <CardBlog
-                    key={item.id}
-                    title={item.title}
-                    date={item.updatedAt}
-                    link={item.slug ? `/blog/${item.slug}` : `#`}
-                    image={item.poster ? item.poster.url : env.NO_IMAGE}
-                    imageWidth={item.poster ? item.poster.width : env.NO_IMAGE_SIZE}
-                    imageHeight={item.poster ? item.poster.height : env.NO_IMAGE_SIZE}
-                  />
-                )
-              }
-            ) || null}
+        <div className="px-3 pt-6 mx-auto max-w-screen-lg">
+          <div className="sm:mx-auto lg:max-w-full">
+            {
+              statePosts && !!statePosts.length && 
+              <Slider {...settings}>
+                {statePosts.map((item) => 
+                  {
+                    return (
+                      <div key={item.id} className="p-2">
+                        <CardBlog
+                          title={item.title}
+                          date={item.updatedAt}
+                          link={item.slug ? `/${item.slug}` : `#`}
+                          image={item.poster ? item.poster.url : env.NO_IMAGE}
+                          imageWidth={item.poster ? item.poster.width : env.NO_IMAGE_SIZE}
+                          imageHeight={item.poster ? item.poster.height : env.NO_IMAGE_SIZE}
+                        />
+                      </div>
+                    )
+                  }
+                ) || null}
+              </Slider>
+            }
           </div>
         </div>
 
