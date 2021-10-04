@@ -49,3 +49,34 @@ export async function getPosts() {
 )
   return data && data.posts
 }
+
+export async function getPages() {
+  const data = await fetchAPI(
+    `
+    query MyQuery {
+      pages(orderBy: createdAt_DESC) {
+        id
+        slug
+        title
+        updatedAt
+        images {
+          id
+          width
+          height
+          url
+        }
+        poster {
+          id
+          width
+          height
+          url
+        }
+        description {
+          html
+        }
+      }
+    }
+  `
+)
+  return data && data.pages
+}
