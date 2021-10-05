@@ -122,7 +122,7 @@ export default function CardSingleBlogLanding(props) {
             
             {images && !!images.length &&
               <div className="px-4 py-9 mx-auto max-w-screen-lg">
-                <div className={`grid grid-cols-1 md:grid-cols-${images.length} lg:grid-cols-${images.length} gap-4`}>
+                <div className={`grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4`}>
                   {images.map((img) => 
                     <Image
                       key={img.id}
