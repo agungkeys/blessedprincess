@@ -22,3 +22,11 @@ a {
 .leading-4 {
   line-height: 1.5rem;
 }
+
+.html-string > p {
+  margin-top: 1em;
+}
+
+.html-string > strong {
+  font-weight: bold;
+}

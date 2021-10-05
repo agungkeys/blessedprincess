@@ -11,7 +11,8 @@ function Home({ props }) {
   const { storePosts, storePages } = props;
   const [statePosts, setStatePosts] = useState([]);
   const [statePostOne, setStatePostOne] = useState({});
-  const [statePagesFirst, setStatePagesFirst] = useState([]);
+  const [statePagesFirst, setStatePagesFirst] = useState({});
+  const [statePagesSecond, setStatePagesSecond] = useState({});
 
   useEffect(() => {
     if(storePosts){
@@ -26,10 +27,14 @@ function Home({ props }) {
   }, [statePosts]);
 
   useEffect(() => {
-    // find little notes
+    
     if(storePages) {
-      let res = storePages.find(dt => dt.id === 'ckucewo4ofsu80986ctx51qu5')
-      setStatePagesFirst(res);
+      // find little notes
+      let resFirst = storePages.find(dt => dt.id === 'ckucewo4ofsu80986ctx51qu5');
+      setStatePagesFirst(resFirst);
+      // find about
+      let resSecond = storePages.find(dt => dt.id === 'cku9gj4pcaq0j0d84zu2qnzbo');
+      setStatePagesSecond(resSecond);
     }
   }, [storePages])
 
@@ -140,6 +145,18 @@ function Home({ props }) {
         <div className="px-4 py-2 mx-auto max-w-screen-lg">
           <hr className="border border-pink-800" />
         </div>
+
+        {!isObjectEmpty(statePagesSecond) && 
+          <div className="px-4 py-6 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
+            <CardSingleBlogLanding 
+              title={statePagesSecond.title}
+              poster={statePagesSecond.poster}
+              images={statePagesSecond.images}
+              description={statePagesSecond.description && statePagesSecond.description.html}
+              type={3}
+            />
+          </div>
+        || null}
 
       </main>
     </MainLayout>
