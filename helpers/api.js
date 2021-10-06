@@ -39,6 +39,7 @@ export async function getPosts() {
           width
           height
           url
+          thumbUrl: url(transformation: {image: {resize: {fit: crop, height: 350, width: 350}}})
         }
         description {
           html
@@ -70,6 +71,7 @@ export async function getPages() {
           width
           height
           url
+          thumbUrl: url(transformation: {image: {resize: {fit: crop, height: 350, width: 350}}})
         }
         description {
           html

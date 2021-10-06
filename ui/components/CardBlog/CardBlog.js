@@ -3,35 +3,37 @@ import NextLink from "../../elements/NextLink";
 import { formatDate } from "../../../helpers/utils";
 
 function CardBlog(props) {
-  const { title, description, date, image, imageWidth, imageHeight, link } = props;
+  const { title, description, date, image, imageWidth, imageHeight, link, isCenter = false } = props;
   return (
     <div className="overflow-hidden transition-shadow duration-300 bg-white rounded" style={{backgroundColor: "#f8e9e8"}}>
       <div className="block">
         <NextLink href={link}>
-          <div className="inline-grid w-full h-40 sm:h-60 md:h-56 lg:h-56">
-            <Image
-              className="rounded"
-              src={image}
-              alt=""
-              width={imageWidth}
-              height={imageHeight}
-              objectFit="cover"
-              layout="responsive"
-              quality={100}
-            />
+          {/* <div className="inline-grid w-full h-40 sm:h-60 md:h-56 lg:h-56"> */}
+          <div className="w-full">
+            <div className="block relative">
+              <Image
+                className="rounded"
+                src={image}
+                alt={title}
+                width={imageWidth}
+                height={imageHeight}
+                layout="responsive"
+                quality={100}
+              />
+            </div>
           </div>
         </NextLink>
       </div>
-      <div className="inline-block py-4">
+      <div className={`inline-block py-4 ${isCenter && `w-full`}`}>
         {date && 
-          <p className="mb-1 text-xs font-semibold text-gray-600 font-serif">
+          <p className={`mb-1 text-xs font-semibold text-gray-600 font-serif ${isCenter && `text-center`}`}>
             {formatDate(date)}
           </p>
         || null
         }
         <NextLink href={link}>
-          <div className="inline-block mb-3 text-black transition-colors duration-200 hover:text-deep-pink-800">
-            <h2 className="text-lg font-bold font-serif leading-4 line-clamp-2">{title}</h2>
+          <div className="inline-block w-full mb-3 text-black transition-colors duration-200 hover:text-deep-pink-800">
+            <h2 className={`text-lg font-bold font-serif leading-4 line-clamp-2 ${isCenter && `text-center`}`}>{title}</h2>
           </div>
         </NextLink>
         {description && 

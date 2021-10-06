@@ -30,3 +30,18 @@ a {
 .html-string > strong {
   font-weight: bold;
 }
+
+.card .image-container {
+  width: 100%;
+}
+
+.card .image-container div {
+  position: unset !important;
+}
+
+.card .image-container .image {
+  object-fit: contain;
+  width: 100% !important;
+  position: relative !important;
+  height: unset !important;
+}

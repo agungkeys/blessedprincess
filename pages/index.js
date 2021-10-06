@@ -45,7 +45,7 @@ function Home({ props }) {
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 1,
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 2000,
     responsive: [
       {
@@ -62,6 +62,7 @@ function Home({ props }) {
           slidesToShow: 2,
           slidesToScroll: 2,
           infinite: true,
+          autoplay: true,
         },
       },
       {
@@ -70,6 +71,7 @@ function Home({ props }) {
           slidesToShow: 2,
           slidesToScroll: 2,
           infinite: true,
+          autoplay: true,
         }
       }
     ],
@@ -90,7 +92,7 @@ function Home({ props }) {
             {
               statePosts && !!statePosts.length && 
               <Slider {...settings}>
-                {statePosts.slice(0, 8).map((item) => 
+                {statePosts.slice(0, 9).map((item) => 
                   {
                     return (
                       <div key={item.id} className="p-2">
@@ -98,9 +100,9 @@ function Home({ props }) {
                           title={item.title}
                           date={item.updatedAt}
                           link={item.slug ? `/${item.slug}` : `#`}
-                          image={item.poster ? item.poster.url : env.NO_IMAGE}
-                          imageWidth={item.poster ? item.poster.width : env.NO_IMAGE_SIZE}
-                          imageHeight={item.poster ? item.poster.height : env.NO_IMAGE_SIZE}
+                          image={item.poster ? item.poster.thumbUrl : env.NO_IMAGE}
+                          imageWidth={item.poster ? 350 : env.NO_IMAGE_SIZE}
+                          imageHeight={item.poster ? 350 : env.NO_IMAGE_SIZE}
                         />
                       </div>
                     )
@@ -157,6 +159,41 @@ function Home({ props }) {
             />
           </div>
         || null}
+
+        <div className="px-4 py-2 mt-6 mx-auto max-w-screen-lg">
+          <hr className="border border-pink-800" />
+        </div>
+
+        <div className="px-3 py-6 mx-auto max-w-screen-lg">
+          <h1 className="text-xl font-bold font-serif leading-4 text-center">Popular Reads</h1>
+        </div>
+
+        <div className="px-4 py-2 mx-auto max-w-screen-lg">
+          <hr className="border border-pink-800" />
+        </div>
+
+        <div className="px-4 py-6 mx-auto max-w-screen-lg md:px-24 lg:px-8">
+          <div className={`grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4`}>
+            {statePosts.slice(0, 9).map((item) => 
+              {
+                return (
+                  <div key={item.id} className="p-2">
+                    <CardBlog
+                      title={item.title}
+                      date={item.updatedAt}
+                      link={item.slug ? `/${item.slug}` : `#`}
+                      image={item.poster ? item.poster.thumbUrl : env.NO_IMAGE}
+                      imageWidth={item.poster ? 350: env.NO_IMAGE_SIZE}
+                      imageHeight={item.poster ? 350 : env.NO_IMAGE_SIZE}
+                      isCenter
+                    />
+                  </div>
+                )
+              }
+            ) || null}
+          </div>
+        </div>
+
 
       </main>
     </MainLayout>

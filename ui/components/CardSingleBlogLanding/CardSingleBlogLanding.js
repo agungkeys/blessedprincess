@@ -121,7 +121,7 @@ export default function CardSingleBlogLanding(props) {
             </div>
             
             {images && !!images.length &&
-              <div className="px-4 py-9 mx-auto max-w-screen-lg">
+              <div className="px-4 py-9 mx-auto max-w-screen-lg md:px-24 lg:px-8">
                 <div className={`grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4`}>
                   {images.map((img) => 
                     <Image
