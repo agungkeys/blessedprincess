@@ -5,7 +5,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Times New Rowman', ...defaultTheme.fontFamily.sans],
+        serif: ['Nanum Myeongjo'],
+        sans: ['Quicksand'],
+        cursive: ['Sacramento'],
       },
       colors: {
         red: {
