@@ -34,15 +34,15 @@ const Navbar = () => {
               </Popover.Button>
             </div>
             <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
-              <NextLink href="/blog" className="text-base font-medium text-gray-800 hover:text-pink-800">
+              <NextLink href="/blog" className="text-base font-medium text-gray-800 hover:text-pink-800 hover:underline">
                 Blog
               </NextLink>
-              <NextLink href="/about" className="ml-8 text-base font-medium text-gray-800 hover:text-pink-800">
+              <NextLink href="/about" className="ml-8 text-base font-medium text-gray-800 hover:text-pink-800 hover:underline">
                 About
               </NextLink>
               <NextLink
                 href="/contact"
-                className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-pink-700 hover:bg-pink-800"
+                className="ml-8 text-base font-medium text-gray-800 hover:text-pink-800 hover:underline"
               >
                 Contact
               </NextLink>
