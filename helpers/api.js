@@ -44,11 +44,35 @@ export async function getPosts() {
         description {
           html
         }
+        featuredLanding
       }
     }
   `
 )
   return data && data.posts
+}
+
+export async function getPost(slugData="") {
+  const data = await fetchAPI(
+    `
+    query MyQuery($slug: String){
+      post(where: {slug: $slug}) {
+        id
+        slug
+        title
+        description {
+          html
+        }
+      }
+    }
+  `,
+    {
+      variables: {
+        slug: slugData,
+      }
+    }
+  )
+  return data && data.post
 }
 
 export async function getPages() {

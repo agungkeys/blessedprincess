@@ -28,7 +28,7 @@ function Title(props) {
                   height="24"
                 />
               </svg>
-              <span className="relative">{title}</span>
+              <span className="relative font-cursive text-black">{title}</span>
             </span>
           </h2>
         </div>

@@ -13,10 +13,20 @@ function Home({ props }) {
   const [statePostOne, setStatePostOne] = useState({});
   const [statePagesFirst, setStatePagesFirst] = useState({});
   const [statePagesSecond, setStatePagesSecond] = useState({});
+  const [statePostsFeatured, setStatePostsFeatured] = useState([]);
 
   useEffect(() => {
     if(storePosts){
       setStatePosts(storePosts);
+      
+      // refill data for post featured on landing
+      const featured = [];
+      storePosts.map((item) => {
+        if(!!item.featuredLanding){
+          featured.push(item);
+        }
+      })
+      setStatePostsFeatured(featured);
     }
   },[storePosts]);
 
@@ -92,7 +102,7 @@ function Home({ props }) {
             {
               statePosts && !!statePosts.length && 
               <Slider {...settings}>
-                {statePosts.slice(0, 9).map((item) => 
+                {statePostsFeatured.slice(0, 8).map((item) => 
                   {
                     return (
                       <div key={item.id} className="p-2">
