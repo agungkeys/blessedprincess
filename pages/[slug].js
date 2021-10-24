@@ -16,7 +16,7 @@ function Slug({ props }) {
     }
   },[storePost]);
 
-  const disqusShortname = "blessed-9"
+  const disqusShortname = "https-blessedprincess-my-id"
   const disqusConfig = {
     url: `https://${process.env.BASE_HOST}/${storePost.slug}`,
     identifier: storePost.id, // Single post id

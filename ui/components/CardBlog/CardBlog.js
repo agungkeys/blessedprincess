@@ -1,6 +1,6 @@
 import Image from "next/image";
 import NextLink from "../../elements/NextLink";
-import { formatDate } from "../../../helpers/utils";
+import { firstLetterWordUppercase, formatDate } from "../../../helpers/utils";
 
 function CardBlog(props) {
   const { title, description, date, image, imageWidth, imageHeight, link, isCenter = false } = props;
@@ -33,7 +33,7 @@ function CardBlog(props) {
         }
         <NextLink href={link}>
           <div className="inline-block w-full mb-3 text-black transition-colors duration-200 hover:text-deep-pink-800">
-            <h2 className={`text-lg font-bold font-serif leading-4 line-clamp-2 ${isCenter && `text-center`}`}>{title}</h2>
+            <h2 className={`text-lg font-bold font-serif leading-4 line-clamp-2 ${isCenter && `text-center`}`}>{firstLetterWordUppercase(title)}</h2>
           </div>
         </NextLink>
         {description && 

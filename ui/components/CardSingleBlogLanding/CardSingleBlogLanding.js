@@ -1,7 +1,7 @@
 import NextLink from "../../elements/NextLink";
 import Image from "next/image";
 import env from "../../../helpers/env";
-import { formatDate } from "../../../helpers/utils";
+import { firstLetterWordUppercase, formatDate } from "../../../helpers/utils";
 
 export default function CardSingleBlogLanding(props) {
   const { title, description, date, poster, images, link, type = 1} = props;
@@ -18,7 +18,7 @@ export default function CardSingleBlogLanding(props) {
             || null}
             <NextLink href={link || '/'}>
               <div className="inline-block mb-3 text-black transition-colors duration-200 hover:text-deep-pink-800">
-                <span className="text-xl font-bold font-serif leading-4">{title || '-'}</span>
+                <span className="text-xl font-bold font-serif leading-4">{firstLetterWordUppercase(title) || '-'}</span>
               </div>
             </NextLink>
             {poster && 
@@ -57,7 +57,7 @@ export default function CardSingleBlogLanding(props) {
         view = (
           <>
             <div className="inline-block mb-3 text-black transition-colors duration-200 hover:text-deep-pink-800">
-              <span className="text-xl font-bold font-serif leading-4">{title || '-'}</span>
+              <span className="text-xl font-bold font-serif leading-4">{firstLetterWordUppercase(title) || '-'}</span>
             </div>
             {images && !!images.length && 
               <div className="block">
@@ -107,7 +107,7 @@ export default function CardSingleBlogLanding(props) {
             </div>
 
             <div className="inline-block text-black transition-colors duration-200 hover:text-deep-pink-800">
-              <span className="text-xl font-bold font-serif leading-4">{title || '-'}</span>
+              <span className="text-xl font-bold font-serif leading-4">{firstLetterWordUppercase(title) || '-'}</span>
             </div>
 
             {description && 

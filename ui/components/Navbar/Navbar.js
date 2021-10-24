@@ -83,30 +83,24 @@ const Navbar = () => {
                 <div className="mt-8">
                   <nav className="grid gap-y-8">
                       <NextLink
-                        href=""
+                        href="/blog"
                         className="flex items-center rounded-md hover:bg-gray-50"
                       >
-                        <BookOpenIcon className="flex-shrink-0 h-6 w-6 text-pink-700" aria-hidden="true" />
                         <span className="ml-3 text-base font-medium text-gray-900">Blog</span>
                       </NextLink>
                       <NextLink
-                        href=""
+                        href="/about"
                         className="flex items-center rounded-md hover:bg-gray-50"
                       >
-                        <ChartBarIcon className="flex-shrink-0 h-6 w-6 text-pink-700" aria-hidden="true" />
                         <span className="ml-3 text-base font-medium text-gray-900">About</span>
                       </NextLink>
+                      <NextLink
+                        href="/contact"
+                        className="flex items-center rounded-md hover:bg-gray-50"
+                      >
+                        <span className="ml-3 text-base font-medium text-gray-900">Contact</span>
+                      </NextLink>
                   </nav>
-                </div>
-              </div>
-              <div className="py-6 px-5 space-y-6">
-                <div>
-                  <NextLink
-                    href="/"
-                    className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-pink-700 hover:bg-pink-800"
-                  >
-                    Contact
-                  </NextLink>
                 </div>
               </div>
             </div>
