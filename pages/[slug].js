@@ -23,14 +23,14 @@ function Slug({ props }) {
     title: storePost.title // Single post title
   }
   const slugSeo =  {
-    TITLE: statePost && statePost.title ? firstLetterWordUppercase(statePost.title) : `Blessed Princess - Official Blog by Fatimah Fauzan`,
-    DESC: statePost && statePost.title ? firstLetterWordUppercase(statePost.title) : `Blessed Princess - Official Blog by Fatimah Fauzan`,
+    TITLE: storePost && storePost.title ? firstLetterWordUppercase(storePost.title) : `Blessed Princess - Official Blog by Fatimah Fauzan`,
+    DESC: storePost && storePost.title ? firstLetterWordUppercase(storePost.title) : `Blessed Princess - Official Blog by Fatimah Fauzan`,
     KEYWORDS:
       'Blessed Princess, Blogger',
     AUTHOR: 'Fatimah',
-    OG_TITLE: statePost && statePost.title ? firstLetterWordUppercase(statePost.title) : `Blessed Princess - Official Blog by Fatimah Fauzan`,
+    OG_TITLE: storePost && storePost.title ? firstLetterWordUppercase(storePost.title) : `Blessed Princess - Official Blog by Fatimah Fauzan`,
     OG_DESC:
-      statePost && statePost.title ? firstLetterWordUppercase(statePost.title) : `Blessed Princess - Official Blog by Fatimah Fauzan`,
+      storePost && storePost.title ? firstLetterWordUppercase(storePost.title) : `Blessed Princess - Official Blog by Fatimah Fauzan`,
     OG_TYPE: 'website',
     OG_SITENAME: 'Blessed Princess',
     OG_IMAGE_TYPE: 'jpg',
@@ -38,12 +38,13 @@ function Slug({ props }) {
     OG_IMAGE_HEIGHT: '628',
     OG_IMAGE_ALT: 'BlessedPrincess',
     OG_TWITTER_CARD: 'Summary',
-    OG_TWITTER_TITLE: statePost && statePost.title ? firstLetterWordUppercase(statePost.title) : `Blessed Princess - Official Blog by Fatimah Fauzan`,
+    OG_TWITTER_TITLE: storePost && storePost.title ? firstLetterWordUppercase(storePost.title) : `Blessed Princess - Official Blog by Fatimah Fauzan`,
     OG_TWITTER_DESC:
-      statePost && statePost.title ? firstLetterWordUppercase(statePost.title) : `Blessed Princess - Official Blog by Fatimah Fauzan`,
+      storePost && storePost.title ? firstLetterWordUppercase(storePost.title) : `Blessed Princess - Official Blog by Fatimah Fauzan`,
     OG_TWITTER_SITE: '@fatimahfauzan93',
   }
   const seoData = { ...seo.DEFAULT, ...slugSeo }
+  console.log("🚀 ~ file: [slug].js ~ line 47 ~ Slug ~ seoData", seoData)
 
   return (
     <MainLayout>

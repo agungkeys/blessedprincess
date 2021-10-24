@@ -31,6 +31,11 @@ export default function MainHead(props) {
   return (
     <Head>
       <meta charSet="utf-8" />
+      <title>{TITLE}</title>
+      {DESC && <meta name="description" content={DESC} />}
+      <link rel="shortcut icon" type="image/x-icon" href={`${ENV.BASE_URL}/favicon.ico`} />
+      <meta name="keywords" content={KEYWORDS} />
+      
       <meta httpEquiv="content-type" content="text/html;charset=UTF-8" />
       <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
 
@@ -63,10 +68,6 @@ export default function MainHead(props) {
       />
       <meta name="theme-color" content="pink" />
       {/* <meta property="fb:app_id" content={ENV.FB_APP_ID} /> */}
-
-      <title>{TITLE}</title>
-      {DESC && <meta name="description" content={DESC} />}
-      <meta name="keywords" content={KEYWORDS} />
 
       {/* META OG */}
       <meta property="og:locale" content={OG_LOCALE} />
