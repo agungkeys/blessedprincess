@@ -7,7 +7,7 @@ function Footer({ }) {
       <div className="px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
         <div className="flex flex-col justify-between pt-5 pb-5 border-t border-gray-800 sm:flex-row">
           <p className="text-sm text-gray-500">
-            {`© Copyright ${year} Blessed Inc. All rights reserved.`}
+            {`© Copyright ${year} Fatimah Fauzan. All rights reserved.`}
           </p>
           <div className="flex items-center mt-4 space-x-4 sm:mt-0">
             <a className="text-gray-500 transition-colors duration-300 hover:text-pink-700" target="_blank" href="https://twitter.com/fatimahfauzan93" rel="noopener noreferrer">

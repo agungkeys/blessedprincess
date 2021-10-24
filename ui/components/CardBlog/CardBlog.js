@@ -32,8 +32,8 @@ function CardBlog(props) {
         || null
         }
         <NextLink href={link}>
-          <div className="inline-block w-full mb-3 text-black transition-colors duration-200 hover:text-deep-pink-800">
-            <h2 className={`text-lg font-bold font-serif leading-4 line-clamp-2 ${isCenter && `text-center`}`}>{firstLetterWordUppercase(title)}</h2>
+          <div className="inline-block w-full mb-3">
+            <h2 className={`text-lg font-bold font-serif leading-4 text-black transition-colors duration-200 hover:text-pink-800 hover:underline line-clamp-2 ${isCenter && `text-center`}`}>{firstLetterWordUppercase(title)}</h2>
           </div>
         </NextLink>
         {description && 

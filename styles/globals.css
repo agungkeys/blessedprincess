@@ -40,6 +40,26 @@ a {
   border-radius: 0.25rem;
 }
 
+.html-string > p > a {
+  color: #616161;
+  text-decoration: underline;
+}
+
+.html-string > p > a:hover {
+  color: #ad1457;
+  text-decoration: underline;
+}
+
+.html-string > a {
+  color: #616161;
+  text-decoration: underline;
+}
+
+.html-string > a:hover {
+  color: #ad1457;
+  text-decoration: underline;
+}
+
 .card .image-container {
   width: 100%;
 }
