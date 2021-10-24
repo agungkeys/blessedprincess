@@ -114,3 +114,39 @@ export async function getPages() {
 )
   return data && data.pages
 }
+
+export async function getPage(slugData=""){
+  const data = await fetchAPI(
+    `
+    query MyQuery($slug: String){
+      page(where: {slug: $slug}) {
+        id
+        slug
+        title
+        updatedAt
+        poster {
+          id
+          height
+          width
+          url
+        }
+        images {
+          id
+          url
+          height
+          width
+        }
+        description {
+          html
+        }
+      }
+    }
+  `,
+    {
+      variables: {
+        slug: slugData,
+      }
+    }
+  )
+  return data && data.page
+}
