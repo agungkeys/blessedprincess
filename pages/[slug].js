@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { MainLayout, Title, CardBlog } from '../ui';
+import Image from 'next/image';
 import { getPost, getPosts } from '../helpers/api';
 import { firstLetterWordUppercase, shuffleArray } from '../helpers/utils';
 import {DiscussionEmbed} from "disqus-react"
@@ -26,11 +27,31 @@ function Slug({ props }) {
       {statePost && 
         <>
           <div className="px-4 mx-auto max-w-screen-md">
-            <Title title={firstLetterWordUppercase(statePost.title)} />
-            <div className="mb-4 text-gray-700 font-serif html-string" dangerouslySetInnerHTML={{ __html: statePost.description.html }} />
+            <Title title={firstLetterWordUppercase(statePost.title)} textAlign='text-center' />
+            {statePost.poster && 
+              <div className="block text-center">
+                  <div className="inline-grid w-full max-w-screen-sm">
+                    <Image
+                      className="rounded"
+                      src={statePost.poster ? statePost.poster.url : env.NO_IMAGE}
+                      alt={statePost.title || '-'}
+                      width={statePost.poster ? statePost.poster.width : env.NO_IMAGE_SIZE}
+                      height={statePost.poster ? statePost.poster.height : env.NO_IMAGE_SIZE}
+                      objectFit="cover"
+                      layout="responsive"
+                      quality={100}
+                    />
+                  </div>
+              </div>
+            || null}
+            <div className="mb-4 text-gray-700 font-serif text-justify html-string" dangerouslySetInnerHTML={{ __html: statePost.description.html }} />
+
+            <div className="py-2 md:py-4 lg:py-6 mx-auto max-w-screen-lg">
+              <hr className="border border-pink-800" />
+            </div>
 
             <div className="py-6">
-              <div className={`grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4`}>
+              <div className={`grid grid-cols-3 gap-4`}>
                 {storePosts && shuffleArray(storePosts).slice(0, 3).map((item) => 
                   {
                     return (

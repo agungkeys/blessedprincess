@@ -1,10 +1,10 @@
 function Title(props) {
-  const { title } = props;
+  const { title, textAlign='text-left' } = props;
   return (
     <div>
       <div className="flex flex-col px-4 py-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-8 lg:flex-row">
         <div className="lg:w-full">
-          <h2 className="relative font-sans text-3xl font-bold tracking-tight text-pink-700 sm:text-4xl sm:leading-none">
+          <h2 className={`relative font-sans text-3xl font-bold tracking-tight text-pink-700 sm:text-4xl sm:leading-none ${textAlign && textAlign}`}>
             <span className="relative inline-block">
               <svg
                 viewBox="0 0 52 24"
@@ -28,7 +28,7 @@ function Title(props) {
                   height="24"
                 />
               </svg>
-              <span className="relative font-cursive text-black">{title}</span>
+              <span className='relative font-cursive text-black'>{title}</span>
             </span>
           </h2>
         </div>
