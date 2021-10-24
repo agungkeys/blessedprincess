@@ -35,6 +35,11 @@ a {
   font-weight: bold;
 }
 
+.html-string > img {
+  margin: 0 auto;
+  border-radius: 0.25rem;
+}
+
 .card .image-container {
   width: 100%;
 }
