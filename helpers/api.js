@@ -70,6 +70,7 @@ export async function getPost(slugData="") {
         description {
           html
         }
+        updatedAt
       }
     }
   `,

@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { MainLayout, Title, CardBlog } from '../ui';
+import { MainLayout, Title, CardBlog, MainHead } from '../ui';
 import Image from 'next/image';
 import { getPost, getPosts } from '../helpers/api';
 import { firstLetterWordUppercase, shuffleArray } from '../helpers/utils';
+import seo from '../helpers/seo';
 import {DiscussionEmbed} from "disqus-react"
 
 function Slug({ props }) {
@@ -21,16 +22,39 @@ function Slug({ props }) {
     identifier: storePost.id, // Single post id
     title: storePost.title // Single post title
   }
+  const slugSeo =  {
+    TITLE: statePost && statePost.title ? firstLetterWordUppercase(statePost.title) : `Blessed Princess - Official Blog by Fatimah Fauzan`,
+    DESC: statePost && statePost.title ? firstLetterWordUppercase(statePost.title) : `Blessed Princess - Official Blog by Fatimah Fauzan`,
+    KEYWORDS:
+      'Blessed Princess, Blogger',
+    AUTHOR: 'Fatimah',
+    OG_TITLE: statePost && statePost.title ? firstLetterWordUppercase(statePost.title) : `Blessed Princess - Official Blog by Fatimah Fauzan`,
+    OG_DESC:
+      statePost && statePost.title ? firstLetterWordUppercase(statePost.title) : `Blessed Princess - Official Blog by Fatimah Fauzan`,
+    OG_TYPE: 'website',
+    OG_SITENAME: 'Blessed Princess',
+    OG_IMAGE_TYPE: 'jpg',
+    OG_IMAGE_WIDTH: '1200',
+    OG_IMAGE_HEIGHT: '628',
+    OG_IMAGE_ALT: 'BlessedPrincess',
+    OG_TWITTER_CARD: 'Summary',
+    OG_TWITTER_TITLE: statePost && statePost.title ? firstLetterWordUppercase(statePost.title) : `Blessed Princess - Official Blog by Fatimah Fauzan`,
+    OG_TWITTER_DESC:
+      statePost && statePost.title ? firstLetterWordUppercase(statePost.title) : `Blessed Princess - Official Blog by Fatimah Fauzan`,
+    OG_TWITTER_SITE: '@fatimahfauzan93',
+  }
+  const seoData = { ...seo.DEFAULT, ...slugSeo }
 
   return (
     <MainLayout>
+      <MainHead seo={seoData} />
       {statePost && 
         <>
           <div className="px-4 mx-auto max-w-screen-md">
-            <Title title={firstLetterWordUppercase(statePost.title)} textAlign='text-center' />
+            <Title title={firstLetterWordUppercase(statePost.title)} textAlign='text-center' date={statePost.updatedAt} />
             {statePost.poster && 
               <div className="block text-center">
-                  <div className="inline-grid w-full max-w-screen-sm">
+                  <div className="inline-grid w-full">
                     <Image
                       className="rounded"
                       src={statePost.poster ? statePost.poster.url : env.NO_IMAGE}

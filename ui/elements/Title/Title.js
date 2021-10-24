@@ -1,5 +1,7 @@
+import { formatDate } from '../../../helpers/utils';
+
 function Title(props) {
-  const { title, textAlign='text-left' } = props;
+  const { title, textAlign='text-left', date } = props;
   return (
     <div>
       <div className="flex flex-col px-4 py-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-8 lg:flex-row">
@@ -28,6 +30,13 @@ function Title(props) {
                   height="24"
                 />
               </svg>
+              {date && 
+              <div className='-mt-5'>
+                <span className="text-xs font-semibold text-gray-600 font-serif">
+                  {formatDate(date)}
+                </span>
+              </div>
+              || null}
               <span className='relative font-cursive text-black'>{title}</span>
             </span>
           </h2>

@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
-import { MainLayout, CardBlog, CardSingleBlogLanding } from '../ui';
+import { MainLayout, CardBlog, CardSingleBlogLanding, MainHead } from '../ui';
 import { getPages, getPosts } from '../helpers/api';
 import env from '../helpers/env';
+import seo from '../helpers/seo';
 import { isObjectEmpty } from '../helpers/utils';
 import Slider from "react-slick";
 
@@ -88,11 +89,12 @@ function Home({ props }) {
   };
   return (
     <MainLayout>
-      <Head>
+      <MainHead seo={seo.DEFAULT} />
+      {/* <Head>
         <title>Blessed Princess - Official Page by Fatimah</title>
         <meta name="description" content="Blessed Princess - Official Page by Fatimah" />
         <link rel="icon" href="/favicon.ico" />
-      </Head>
+      </Head> */}
       <main className="w-full">
 
         {/* section list blog */}

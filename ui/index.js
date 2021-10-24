@@ -6,6 +6,9 @@ import Title from "./elements/Title";
 /** layout */
 import MainLayout from "./layout";
 
+/** head */
+import MainHead from "./head";
+
 /** components */
 import CardBlog from "./components/CardBlog";
 import CardSingleBlogLanding from "./components/CardSingleBlogLanding";
@@ -22,6 +25,9 @@ export {
 
   // layout
   MainLayout,
+
+  // Head
+  MainHead,
 
   // components
   CardBlog,

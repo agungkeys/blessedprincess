@@ -5,7 +5,7 @@ const CURRENT_ENV = publicRuntimeConfig.ENV || null;
 const CURRENT_API = publicRuntimeConfig.API || null;
 const CURRENT_HOST = publicRuntimeConfig.HOST || null;
 const BASE_URL = CURRENT_HOST;
-const LOGO = ``;
+const LOGO = `${BASE_URL}/logo.png`;
 const NO_IMAGE = `https://media.graphcms.com/kapUjG8yQkCl0Wgc6L8r`;
 const NO_IMAGE_SIZE = 621;
 

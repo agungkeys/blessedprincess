@@ -4,8 +4,6 @@ import { getPosts } from '../helpers/api';
 
 function Blog({ props }) {
   const {query, storePosts} = props;
-  console.log("🚀 ~ file: blog.js ~ line 7 ~ Blog ~ storePosts", storePosts)
-  console.log("🚀 ~ file: [slug].js ~ line 6 ~ Slug ~ query", query)
   return (
     <MainLayout>
       <div className="px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
@@ -36,7 +34,6 @@ function Blog({ props }) {
 
 Blog.getInitialProps = async (ctx) => {
   const { query } = ctx
-  console.log(ctx)
   const storePosts = await getPosts();
   // const storePages = await getPages();
     
