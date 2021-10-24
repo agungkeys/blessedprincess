@@ -1,10 +1,5 @@
 import env from "./env";
 
-
-{/* <title>Blessed Princess - Official Blog by Fatimah Fauzan</title>
-        <meta name="description" content="Blessed Princess - Official Blog by Fatimah Fauzan" />
-        <link rel="icon" href="/favicon.ico" /> */}
-
 const seo = {
   DEFAULT: {
     TITLE: 'Blessed Princess - Official Blog by Fatimah Fauzan',
