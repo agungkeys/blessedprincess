@@ -110,7 +110,7 @@ function Home({ props }) {
                       <div key={item.id} className="p-2">
                         <CardBlog
                           title={item.title}
-                          date={item.updatedAt}
+                          date={item.updatedAt || item.createdAt}
                           link={item.slug ? `/${item.slug}` : `#`}
                           image={item.poster ? item.poster.thumbUrl : env.NO_IMAGE}
                           imageWidth={item.poster ? 350 : env.NO_IMAGE_SIZE}
@@ -134,7 +134,7 @@ function Home({ props }) {
             <CardSingleBlogLanding 
               title={statePostOne.title}
               description={statePostOne.shortDescription}
-              date={statePostOne.updatedAt}
+              date={statePostOne.updatedAt || statePostOne.createdAt}
               poster={statePostOne.poster}
               link={statePostOne && statePostOne.slug ? `/${statePostOne.slug}` : `/`}
               type={1}
@@ -192,7 +192,7 @@ function Home({ props }) {
                   <div key={item.id} className="p-2">
                     <CardBlog
                       title={item.title}
-                      date={item.updatedAt}
+                      date={item.updatedAt || item.createdAt}
                       link={item.slug ? `/${item.slug}` : `#`}
                       image={item.poster ? item.poster.thumbUrl : env.NO_IMAGE}
                       imageWidth={item.poster ? 350: env.NO_IMAGE_SIZE}

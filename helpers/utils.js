@@ -11,15 +11,19 @@ export function formatDate(date) {
   const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
     "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"
   ];
-  const d = new Date(date),
-    month = '' + (monthNames[d.getMonth()]),
-    day = '' + d.getDate(),
-    year = d.getFullYear();
+  const d = new Date(date);
+  const month = '' + (monthNames[d.getMonth()]);
+  const day = '' + d.getDate();
+  const year = d.getFullYear();
 
-  if (day.length < 2) 
-    day = '0' + day;
+  let fDay = '';
+  if (day.length < 2) {
+    fDay = '0' + day;
+  }else{
+    fDay = day;
+  }
 
-  return [day, month, year].join(' ');
+  return [fDay, month, year].join(' ');
 }
 
 export function isObjectEmpty(obj) {
