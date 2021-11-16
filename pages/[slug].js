@@ -18,9 +18,9 @@ function Slug({ props }) {
 
   const disqusShortname = "https-blessedprincess-my-id"
   const disqusConfig = {
-    url: `https://${process.env.BASE_HOST}/${storePost.slug}`,
-    identifier: storePost.id, // Single post id
-    title: storePost.title // Single post title
+    url: `https://${process.env.BASE_HOST}/${storePost && storePost.slug || ''}`,
+    identifier: storePost && storePost.id || '', // Single post id
+    title: storePost && storePost.title || '' // Single post title
   }
   const slugSeo =  {
     TITLE: storePost && storePost.title ? firstLetterWordUppercase(storePost.title) : `Blessed Princess - Official Blog by Fatimah Fauzan`,

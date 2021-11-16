@@ -29,6 +29,12 @@ a {
 
 .html-string > p {
   margin-top: 1em;
+  display: block;
+}
+
+.html-string > p:after {
+  content: '\A';
+  white-space: pre;
 }
 
 .html-string > strong {
